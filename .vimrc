@@ -140,8 +140,8 @@ nmap tt <c-w>
 "let g:bike_progress = 1    "show import progress
 
 "show invisible chars
-set listchars=trail:.,tab:>~,nbsp:_
 set list
+set listchars=trail:.,tab:>~,nbsp:_
 "status line
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
@@ -170,12 +170,19 @@ noremap <leader>E :qa!<cr>
 "Insert breakpoint
 map <leader>b oimport ipdb;ipdb.set_trace()<esc>
 
+" Select all
+map <leader>a ggVG
+
 " Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
 
 " Clear search highlights
 noremap <silent><leader>/ :nohls<cr>
+
+" Insert blank lines without going into insert mode
+nmap t o<esc>k
+nmap T O<esc>j
 
 " Easier moving of code blocks
 vnoremap < <gv
